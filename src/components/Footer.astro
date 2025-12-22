@@ -1,0 +1,34 @@
+---
+// src/components/Footer.astro
+const currentYear = new Date().getFullYear();
+---
+
+<footer class="bg-marfil border-t border-piedra/50 py-16 px-6">
+  <div class="max-w-7xl mx-auto flex flex-col items-center text-center">
+    
+    <div class="mb-6">
+      <h3 class="text-2xl font-serif text-grafito tracking-tighter">
+        Otte<span class="text-arcilla italic">rock</span>
+      </h3>
+      <div class="w-8 h-px bg-dorado mx-auto mt-2"></div>
+    </div>
+
+    <p class="text-grafito/60 font-light text-sm max-w-xs leading-relaxed mb-8">
+      Construido con amor y código sólido <br/> 
+      <span class="text-grafito/40">en honor a Rocko.</span>
+    </p>
+
+    <div class="flex gap-8 mb-10">
+      <a href="/galeria" class="text-[10px] uppercase tracking-[0.2em] text-grafito/50 hover:text-musgo transition-colors">Galería</a>
+      <a href="/sobre-mi" class="text-[10px] uppercase tracking-[0.2em] text-grafito/50 hover:text-musgo transition-colors">Historia</a>
+      <a href="mailto:hola@otterock.com" class="text-[10px] uppercase tracking-[0.2em] text-grafito/50 hover:text-musgo transition-colors">Contacto</a>
+    </div>
+
+    <div class="pt-8 border-t border-piedra w-full max-w-md">
+      <p class="text-[11px] text-grafito/40 tracking-wider">
+        © {currentYear} <span class="text-grafito/60 font-medium">Otterock</span> – Desarrollo web que trasciende.
+      </p>
+    </div>
+
+  </div>
+</footer>

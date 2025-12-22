@@ -1,0 +1,46 @@
+---
+/**
+ * MainLayout.astro
+ * Este es el "marco" global de nuestra web. 
+ * Aquí gestionamos el SEO y la estructura base para mantener el rendimiento al máximo.
+ */
+
+import '../styles/global.css';
+import Navbar from '../components/Navbar.astro';
+import Footer from '../components/Footer.astro';
+
+interface Props {
+  title: string;
+  description?: string;
+}
+
+const { 
+  title, 
+  description = "Fotografía contemplativa. Una exploración de la luz, los detalles y la gratitud hacia la tierra." 
+} = Astro.props;
+---
+
+<html lang="es" class="scroll-smooth">
+  <head>
+    <meta charset="utf-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="viewport" content="width=device-width" />
+    <meta name="generator" content={Astro.generator} />
+    
+    <title>{title} | Portafolio de Arte</title>
+    <meta name="description" content={description} />
+
+    </head>
+
+  <body class="bg-marfil text-grafito antialiased min-h-screen flex flex-col">
+    
+    <Navbar />
+
+    <main class="flex-grow pt-20">
+      <slot />
+    </main>
+
+    <Footer />
+
+  </body>
+</html>

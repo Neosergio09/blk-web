@@ -1,16 +1,102 @@
 ---
-
+import MainLayout from '../layouts/MainLayout.astro';
 ---
 
-<html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Astro</title>
-	</head>
-	<body>
-		<h1>Astro</h1>
-	</body>
-</html>
+<MainLayout title="Inicio | La Luz y la Tierra">
+  
+  <section class="relative h-[90vh] flex items-center justify-center overflow-hidden">
+    <div class="absolute inset-0 z-0">
+      <img 
+        src="https://images.unsplash.com/photo-1542224566-6e85f2e6772f?q=80&w=2576&auto=format&fit=crop" 
+        alt="Luz dramática sobre un paisaje montañoso" 
+        class="w-full h-full object-cover opacity-90"
+      />
+      <div class="absolute inset-0 bg-piedra/30 mix-blend-multiply"></div>
+    </div>
+
+    <div class="relative z-10 text-center p-6 max-w-3xl">
+      <h1 class="text-5xl md:text-7xl text-marfil font-serif tracking-tight leading-tight drop-shadow-sm">
+        Detener el tiempo. <br/> Agradecer la luz.
+      </h1>
+      <p class="mt-6 text-lg md:text-xl text-marfil/90 font-light max-w-xl mx-auto leading-relaxed">
+        Una exploración fotográfica de la belleza que habita en lo vasto y en lo mínimo.
+      </p>
+      <div class="mt-10">
+        <a href="#manifiesto" class="inline-block px-8 py-3 border border-marfil/50 text-marfil hover:bg-marfil hover:text-grafito transition-all duration-500 rounded-full text-sm tracking-widest uppercase">
+          Explorar
+        </a>
+      </div>
+    </div>
+  </section>
+
+
+  <section id="manifiesto" class="py-24 md:py-32 px-6">
+    <div class="max-w-2xl mx-auto text-center">
+      <div class="w-16 h-px bg-dorado mx-auto mb-8"></div>
+      
+      <h2 class="text-3xl md:text-4xl text-arcilla font-serif mb-10">
+        Observación atenta y silenciosa.
+      </h2>
+      
+      <div class="space-y-6 text-lg text-grafito/80 font-light leading-relaxed text-balance">
+        <p>
+          La fotografía es mi forma de detener el tiempo y agradecerlo. Cada imagen en esta galería nace de un encuentro: con un lugar, con la luz que lo atraviesa y con el instante exacto en el que todo parece alinearse.
+        </p>
+        <p>
+          Mi trabajo se construye desde una observación atenta y silenciosa. Me interesa fotografiar los espacios no solo como paisajes, sino como experiencias vividas, buscando ángulos donde la luz revela su carácter más íntimo.
+        </p>
+        <p class="text-xl md:text-2xl text-musgo font-serif italic py-4">
+          "Fotografiar así es, para mí, un acto de gratitud hacia la tierra que provee."
+        </p>
+        <p>
+          Este portafolio es una invitación a mirar con más calma, a encontrar luz donde a veces pasa desapercibida.
+        </p>
+      </div>
+
+      <div class="w-16 h-px bg-dorado mx-auto mt-10"></div>
+    </div>
+  </section>
+
+
+  <section class="py-20 px-6 bg-piedra/30"> <div class="max-w-5xl mx-auto">
+      <div class="text-center mb-12">
+        <h3 class="text-2xl text-arcilla font-serif">Fragmentos de luz</h3>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-8 h-[600px] md:h-[500px]">
+        
+        <div class="md:col-span-2 h-full relative group overflow-hidden rounded-sm">
+          <img 
+            src="https://images.unsplash.com/photo-1470770848216-c8d487cf3205?q=80&w=2670&auto=format&fit=crop" 
+            alt="Paisaje vasto con niebla" 
+            class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+          />
+          <div class="absolute inset-0 bg-grafito/20 group-hover:bg-grafito/10 transition-colors"></div>
+        </div>
+
+        <div class="flex flex-col gap-4 md:gap-8 h-full">
+          <div class="h-1/2 relative group overflow-hidden rounded-sm">
+            <img 
+              src="https://images.unsplash.com/photo-1542856391-010fb87dcfed?q=80&w=2670&auto=format&fit=crop" 
+              alt="Detalle de luz en una hoja" 
+              class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+            />
+          </div>
+          <div class="h-1/2 relative group overflow-hidden rounded-sm">
+            <img 
+              src="https://images.unsplash.com/photo-1500382017468-9049fed747ef?q=80&w=2832&auto=format&fit=crop" 
+              alt="Textura de tierra seca" 
+              class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+            />
+          </div>
+        </div>
+
+      </div> <div class="text-center mt-12">
+         <a href="/galeria" class="text-arcilla border-b border-arcilla pb-1 hover:text-musgo hover:border-musgo transition-colors text-sm tracking-widest uppercase">
+          Ver Galería Completa &rarr;
+        </a>
+      </div>
+    </div>
+  </section>
+
+</MainLayout>
