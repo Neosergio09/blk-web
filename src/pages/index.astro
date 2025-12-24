@@ -1,18 +1,25 @@
 ---
 import MainLayout from '../layouts/MainLayout.astro';
-// 1. Importamos el componente de optimización y tu nueva foto local
 import { Image } from 'astro:assets';
+
+// 1. Importamos todas las imágenes localmente para optimización máxima
 import foto5 from '../assets/foto5.jpg';
+// Asumo que guardaremos estas también en assets para el SEO y rendimiento
+import heroFoto from '../assets/foto5.jpg'; 
+import detalleHoja from '../assets/foto14.jpg';
+import texturaTierra from '../assets/foto23.jpg';
 ---
 
 <MainLayout title="Inicio | La Luz y la Tierra">
   
   <section class="relative h-[90vh] flex items-center justify-center overflow-hidden">
     <div class="absolute inset-0 z-0">
-      <img 
-        src="https://images.unsplash.com/photo-1542224566-6e85f2e6772f?q=80&w=2576&auto=format&fit=crop" 
+      <Image 
+        src={heroFoto} 
         alt="Luz dramática sobre un paisaje montañoso" 
         class="w-full h-full object-cover opacity-90"
+        loading="eager" 
+        fetchpriority="high"
       />
       <div class="absolute inset-0 bg-piedra/30 mix-blend-multiply"></div>
     </div>
@@ -35,26 +42,17 @@ import foto5 from '../assets/foto5.jpg';
   <section id="manifiesto" class="py-24 md:py-32 px-6">
     <div class="max-w-2xl mx-auto text-center">
       <div class="w-16 h-px bg-dorado mx-auto mb-8"></div>
-      
-      <h2 class="text-3xl md:text-4xl text-arcilla font-serif mb-10">
+      <h2 class="text-3xl md:text-4xl text-arcilla font-serif mb-10 text-balance">
         Observación atenta y silenciosa.
       </h2>
       
       <div class="space-y-6 text-lg text-grafito/80 font-light leading-relaxed text-balance">
-        <p>
-          La fotografía es mi forma de detener el tiempo y agradecerlo. Cada imagen en esta galería nace de un encuentro: con un lugar, con la luz que lo atraviesa y con el instante exacto en el que todo parece alinearse.
-        </p>
-        <p>
-          Mi trabajo se construye desde una observación atenta y silenciosa. Me interesa fotografiar los espacios no solo como paisajes, sino como experiencias vividas, buscando ángulos donde la luz revela su carácter más íntimo.
-        </p>
+        <p>La fotografía es mi forma de detener el tiempo y agradecerlo...</p>
         <p class="text-xl md:text-2xl text-musgo font-serif italic py-4">
           "Fotografiar así es, para mí, un acto de gratitud hacia la tierra que provee."
         </p>
-        <p>
-          Este portafolio es una invitación a mirar con más calma, a encontrar luz donde a veces pasa desapercibida.
-        </p>
+        <p>Este portafolio es una invitación a mirar con más calma...</p>
       </div>
-
       <div class="w-16 h-px bg-dorado mx-auto mt-10"></div>
     </div>
   </section>
@@ -66,11 +64,10 @@ import foto5 from '../assets/foto5.jpg';
       </div>
 
       <div class="grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-8 h-[600px] md:h-[500px]">
-        
         <div class="md:col-span-2 h-full relative group overflow-hidden rounded-sm">
           <Image 
             src={foto5} 
-            alt="Paisaje vasto con niebla - Perspectiva profunda" 
+            alt="Paisaje vasto con niebla" 
             class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
             width={1200}
             format="webp"
@@ -80,28 +77,31 @@ import foto5 from '../assets/foto5.jpg';
 
         <div class="flex flex-col gap-4 md:gap-8 h-full">
           <div class="h-1/2 relative group overflow-hidden rounded-sm">
-            <img 
-              src="https://images.unsplash.com/photo-1542856391-010fb87dcfed?q=80&w=2670&auto=format&fit=crop" 
+            <Image 
+              src={detalleHoja} 
               alt="Detalle de luz en una hoja" 
               class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+              width={600}
+              format="webp"
             />
           </div>
           <div class="h-1/2 relative group overflow-hidden rounded-sm">
-            <img 
-              src="https://images.unsplash.com/photo-1500382017468-9049fed747ef?q=80&w=2832&auto=format&fit=crop" 
+            <Image 
+              src={texturaTierra} 
               alt="Textura de tierra seca" 
               class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+              width={600}
+              format="webp"
             />
           </div>
         </div>
-
       </div> 
+
       <div class="text-center mt-12">
-         <a href="/galeria" class="text-arcilla border-b border-arcilla pb-1 hover:text-musgo hover:border-musgo transition-colors text-sm tracking-widest uppercase">
+        <a href="/galeria" class="text-arcilla border-b border-arcilla pb-1 hover:text-musgo hover:border-musgo transition-colors text-sm tracking-widest uppercase">
           Ver Galería Completa &rarr;
         </a>
       </div>
     </div>
   </section>
-
 </MainLayout>
