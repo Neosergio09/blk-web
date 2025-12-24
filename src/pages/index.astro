@@ -1,5 +1,8 @@
 ---
 import MainLayout from '../layouts/MainLayout.astro';
+// 1. Importamos el componente de optimización y tu nueva foto local
+import { Image } from 'astro:assets';
+import foto5 from '../assets/foto5.jpg';
 ---
 
 <MainLayout title="Inicio | La Luz y la Tierra">
@@ -29,7 +32,6 @@ import MainLayout from '../layouts/MainLayout.astro';
     </div>
   </section>
 
-
   <section id="manifiesto" class="py-24 md:py-32 px-6">
     <div class="max-w-2xl mx-auto text-center">
       <div class="w-16 h-px bg-dorado mx-auto mb-8"></div>
@@ -57,8 +59,8 @@ import MainLayout from '../layouts/MainLayout.astro';
     </div>
   </section>
 
-
-  <section class="py-20 px-6 bg-piedra/30"> <div class="max-w-5xl mx-auto">
+  <section class="py-20 px-6 bg-piedra/30"> 
+    <div class="max-w-5xl mx-auto">
       <div class="text-center mb-12">
         <h3 class="text-2xl text-arcilla font-serif">Fragmentos de luz</h3>
       </div>
@@ -66,10 +68,12 @@ import MainLayout from '../layouts/MainLayout.astro';
       <div class="grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-8 h-[600px] md:h-[500px]">
         
         <div class="md:col-span-2 h-full relative group overflow-hidden rounded-sm">
-          <img 
-            src="https://images.unsplash.com/photo-1470770848216-c8d487cf3205?q=80&w=2670&auto=format&fit=crop" 
-            alt="Paisaje vasto con niebla" 
+          <Image 
+            src={foto5} 
+            alt="Paisaje vasto con niebla - Perspectiva profunda" 
             class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+            width={1200}
+            format="webp"
           />
           <div class="absolute inset-0 bg-grafito/20 group-hover:bg-grafito/10 transition-colors"></div>
         </div>
@@ -91,7 +95,8 @@ import MainLayout from '../layouts/MainLayout.astro';
           </div>
         </div>
 
-      </div> <div class="text-center mt-12">
+      </div> 
+      <div class="text-center mt-12">
          <a href="/galeria" class="text-arcilla border-b border-arcilla pb-1 hover:text-musgo hover:border-musgo transition-colors text-sm tracking-widest uppercase">
           Ver Galería Completa &rarr;
         </a>
